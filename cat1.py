@@ -22,6 +22,9 @@ DB_FILE_COLLECTION = 'images'
 
 @app.route('/')
 def hello_world():
+    # log = open(log_file, 'a+')
+    # log.write('>>>Client Connecting into [/api/write/] service.\r\n')
+    # log.close()
     log = open(log_file, 'a+')
     log.write('>>>Client Connecting into [/api/write/] service.\r\n')
     return 'Hello World!'
