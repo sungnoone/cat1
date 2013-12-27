@@ -4,12 +4,12 @@ from flask import Flask, request
 from pymongo import *
 import sys
 import json
-
+import os
 
 app = Flask(__name__)
 
 ## Data Folder variable
-log_file = '/tmp/cat1_log.txt'
+log_file = 'cat1_log.txt'
 UPLOAD_FOLDER = '/tmp/cat1_Uploads'
 DOWNLOAD_FOLDER = '/tmp/cat1_Downloads'
 
@@ -22,6 +22,8 @@ DB_FILE_COLLECTION = 'images'
 
 @app.route('/')
 def hello_world():
+    log = open(os.path.join('log', log_file), 'a+')
+    log.write('>>>Client Connecting into [/api/write/] service.\r\n')
     return 'Hello World!'
 
 
