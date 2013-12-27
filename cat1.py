@@ -24,6 +24,7 @@ DB_FILE_COLLECTION = 'images'
 def hello_world():
     log = open(log_file, 'a+')
     log.write('>>>You had requested hello service.\r\n')
+    log.write('>>>You had requested hello service.\r\n')
     log.close()
     return 'Hello World!'
 
